@@ -1,31 +1,78 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Home";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+<div id="background" class="background-image">
+    <div class="container">
+        <div class="row index-position text-center">
+            <h1>
+                <span>Hi, I am Kumar. I build & design Websites,</span>
+                <br />
+                <span>
+                    Web applications, WCF and Web API.<br />
+                </span>
+                <button type="button" class="btn btn-outline-success font-weight-bold" data-toggle="modal" data-target="#ContactForm">Yes, I'm available. Connect with Me :)</button>
+            </h1>
+        </div>
     </div>
 </div>
+
+<form id="Indexform" runat="server">
+    <div class="modal fade" id="ContactForm" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><b>Contact Me</b></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-justify">
+                    <div class="form-group">
+                        <div class="row rowheight">
+                            <h5 class="text-center">Thanks for your interest, could you please take a moment to introduce yourself</h5>
+                        </div>              
+                            <div class="row">
+                                <div class="col">
+                                    @Html.Label("Name", new { @class = "font-weight-bold" })
+                                </div>
+                                <div class="col">
+                                    @Html.TextBox("Name", null, new { @class = "form-control  form-control valid", @data_val = "true", @data_val_required = "Name is required" })
+                                </div>
+                            </div>
+                            <div class="row linehight">
+                                <div class="col">
+                                    @Html.Label("Email", new { @class = "font-weight-bold" })
+                                </div>
+                                <div class="col">
+                                    @Html.TextBox("Email", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row linehight">
+                                <div class="col">
+                                    @Html.Label("Mobile", new { @class = "font-weight-bold" })
+                                </div>
+                                <div class="col">
+                                    @Html.TextBox("Mobile", null, new { @class = "form-control" })
+                                </div>
+                            </div>
+                            <div class="row linehight">
+                                <div class="col">
+                                    @Html.Label("Comments", new { @class = "font-weight-bold" })
+                                </div>
+                                <div class="col">
+                                    @Html.TextArea("Comments", null, new { @class = "form-control" })
+                                </div>    
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" name="submit" value="Submit" />
+                    @*<asp:Button ID="btnSubmit" CssClass="btn btn-primary" runat="server" Text="Submit" UseSubmitBehavior="false" OnClick="btnSubmit_Click" />*@
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
